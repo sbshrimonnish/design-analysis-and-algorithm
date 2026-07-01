@@ -2,7 +2,7 @@ import time
 import random
 
 
-# ---------------- Naive Algorithm ----------------
+
 def naive_search(text, pattern):
     n = len(text)
     m = len(pattern)
@@ -27,7 +27,7 @@ def naive_search(text, pattern):
     return matches, comparisons
 
 
-# ---------------- Compute LPS ----------------
+
 def compute_lps(pattern):
     m = len(pattern)
     lps = [0] * m
@@ -52,7 +52,7 @@ def compute_lps(pattern):
     return lps
 
 
-# ---------------- KMP Algorithm ----------------
+
 def kmp_search(text, pattern):
 
     n = len(text)
@@ -88,7 +88,7 @@ def kmp_search(text, pattern):
     return matches, comparisons
 
 
-# ---------------- Rabin-Karp Algorithm ----------------
+
 def rabin_karp(text, pattern, q=101):
 
     n = len(text)
@@ -132,7 +132,7 @@ def rabin_karp(text, pattern, q=101):
     return matches, comparisons
 
 
-# ---------------- Function to Measure Time ----------------
+
 def measure(func, text, pattern):
     start = time.perf_counter()
     matches, comparisons = func(text, pattern)
@@ -140,8 +140,6 @@ def measure(func, text, pattern):
 
     return matches, comparisons, (end - start) * 1000
 
-
-# ---------------- Main Program ----------------
 text = "AABAACAADAABAABA"
 pattern = "AABA"
 
@@ -169,7 +167,7 @@ print("{:<12} {:<15} {:<15} {:.5f}".format(
     "Rabin-Karp", str(m3), c3, t3))
 
 
-# ---------------- Large Input Test ----------------
+
 print("\nPerformance Comparison")
 print("-" * 70)
 
